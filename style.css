@@ -1,40 +1,55 @@
-/* General reset */
+* {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+.header {
+    text-align: center;
+    padding: 32px;
 }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
 }
 
-/* Content area */
-.content {
-  background-color: #ddd;
-  padding: 20px 20px 100px 20px; /* Top, Right, Bottom, Left */
+/* Tạo 4 cột bằng nhau cho màn hình lớn */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
 }
 
-.content h2 {
-  margin-top: 0;
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    /* Thêm hiệu ứng hover để giao diện chuyên nghiệp hơn */
+    transition: transform 0.3s ease;
 }
 
-/* Footer area */
-.footer {
-  background-color: #f1f1f1;
-  padding: 20px;
+.column img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
-.footer p {
-  margin: 0;
+/* Responsive: 2 cột trên máy tính bảng hoặc màn hình trung bình */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive: 1 cột trên điện thoại hoặc màn hình nhỏ */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
 }
