@@ -1,55 +1,16 @@
-* {
-    box-sizing: border-box;
+/* Định dạng cho container cha */
+.day {
+    display: flex;             /* Kích hoạt chế độ Flexbox */
+    background-color: #2196F3; /* Màu xanh dương làm nền (giống trong hình) */
+    padding: 10px;             /* Khoảng cách giữa viền xanh và các ô bên trong */
+    gap: 10px;                 /* Khoảng cách giữa các ô ngày (Monday, Tuesday...) */
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.header {
-    text-align: center;
-    padding: 32px;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-}
-
-/* Tạo 4 cột bằng nhau cho màn hình lớn */
-.column {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
-}
-
-.column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
-    /* Thêm hiệu ứng hover để giao diện chuyên nghiệp hơn */
-    transition: transform 0.3s ease;
-}
-
-.column img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-/* Responsive: 2 cột trên máy tính bảng hoặc màn hình trung bình */
-@media screen and (max-width: 800px) {
-    .column {
-        flex: 50%;
-        max-width: 50%;
-    }
-}
-
-/* Responsive: 1 cột trên điện thoại hoặc màn hình nhỏ */
-@media screen and (max-width: 600px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
+/* Định dạng cho các phần tử con (các ô ngày) */
+.day > div {
+    background-color: #f1f1f1; /* Màu xám nhạt cho nền của các ô */
+    padding: 20px 10px;        /* Khoảng cách đệm bên trong mỗi ô */
+    font-size: 25px;           /* Kích thước chữ */
+    text-align: center;        /* Căn giữa chữ */
+    flex: 1;                   /* Giúp các ô có độ rộng bằng nhau (tùy chọn) */
 }
