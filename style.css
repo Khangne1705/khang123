@@ -1,16 +1,67 @@
-/* Định dạng cho container cha */
-.day {
-    display: flex;             /* Kích hoạt chế độ Flexbox */
-    background-color: #2196F3; /* Màu xanh dương làm nền (giống trong hình) */
-    padding: 10px;             /* Khoảng cách giữa viền xanh và các ô bên trong */
-    gap: 10px;                 /* Khoảng cách giữa các ô ngày (Monday, Tuesday...) */
+/* Thiết lập cơ bản để loại bỏ khoảng cách mặc định */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Định dạng cho các phần tử con (các ô ngày) */
-.day > div {
-    background-color: #f1f1f1; /* Màu xám nhạt cho nền của các ô */
-    padding: 20px 10px;        /* Khoảng cách đệm bên trong mỗi ô */
-    font-size: 25px;           /* Kích thước chữ */
-    text-align: center;        /* Căn giữa chữ */
-    flex: 1;                   /* Giúp các ô có độ rộng bằng nhau (tùy chọn) */
+/* Định dạng Header (Ẩn tiêu đề nếu bạn chỉ muốn giống hệt hình) */
+header {
+    display: none; /* Trong hình không có phần Header văn bản này */
+}
+
+/* Định dạng thanh Menu (topnav) */
+.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /* Màu nền xám đậm */
+}
+
+.topnav li {
+    float: left;
+}
+
+.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav li a:hover {
+    background-color: #111;
+}
+
+/* Định dạng bố cục Flexbox 3 cột */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép rớt dòng trên màn hình nhỏ */
+    padding: 20px;
+}
+
+/* Cột bên trái và phải (Side) */
+.flex-container > div:nth-child(1),
+.flex-container > div:nth-child(3) {
+    flex: 20%; /* Chiếm 20% chiều rộng */
+    padding: 10px;
+}
+
+/* Cột chính ở giữa (Main Content) */
+.flex-container > div:nth-child(2) {
+    flex: 60%; /* Chiếm 60% chiều rộng */
+    padding: 10px;
+}
+
+/* Responsive: Khi màn hình nhỏ hơn 700px, các cột sẽ xếp chồng lên nhau */
+@media (max-width: 700px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .flex-container > div {
+        flex: 100%;
+    }
 }
