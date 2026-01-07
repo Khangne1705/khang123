@@ -1,27 +1,28 @@
-/* Định dạng cơ bản cho toàn trang */
+/* Thiết lập cơ bản cho trang */
 body {
     font-family: Arial, sans-serif;
     background-color: #f1f1f1;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding: 20px;
 }
 
-/* Khung bao ngoài (Card) */
+/* Định dạng khung thẻ (Card) */
 .card {
-    width: 800px;
     background-color: white;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-/* Hình ảnh tràn khung */
-.card-image img {
+/* Định dạng hình ảnh */
+.card-image {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Nội dung bên trong */
+/* Khoảng cách bên trong nội dung */
 .card-content {
     padding: 20px;
 }
@@ -29,27 +30,25 @@ body {
 .title {
     margin: 10px 0;
     font-size: 24px;
-    font-weight: bold;
-    color: #000;
+    letter-spacing: 1px;
 }
 
 .subtitle {
-    color: #555;
-    font-size: 18px;
+    color: #666;
     margin-bottom: 20px;
 }
 
 .date {
-    opacity: 0.6;
+    color: #999;
 }
 
 .description {
-    line-height: 1.5;
+    line-height: 1.6;
     color: #333;
     margin-bottom: 30px;
 }
 
-/* Phần nút và comment */
+/* Định dạng phần chân thẻ */
 .card-footer {
     display: flex;
     justify-content: space-between;
@@ -57,19 +56,21 @@ body {
 }
 
 .read-more {
-    padding: 10px 20px;
     background-color: white;
     border: 1px solid #ccc;
+    padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .read-more:hover {
-    background-color: #ccc;
+    background-color: #ddd;
 }
 
+/* Định dạng phần bình luận */
 .comments {
-    font-weight: bold;
+    font-size: 14px;
 }
 
 .comment-count {
