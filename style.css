@@ -1,67 +1,80 @@
-/* Thiết lập cơ bản để loại bỏ khoảng cách mặc định */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Định dạng cơ bản cho toàn trang */
+body {
     font-family: Arial, sans-serif;
-}
-
-/* Định dạng Header (Ẩn tiêu đề nếu bạn chỉ muốn giống hệt hình) */
-header {
-    display: none; /* Trong hình không có phần Header văn bản này */
-}
-
-/* Định dạng thanh Menu (topnav) */
-.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333; /* Màu nền xám đậm */
-}
-
-.topnav li {
-    float: left;
-}
-
-.topnav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.topnav li a:hover {
-    background-color: #111;
-}
-
-/* Định dạng bố cục Flexbox 3 cột */
-.flex-container {
+    background-color: #f1f1f1;
     display: flex;
-    flex-wrap: wrap; /* Cho phép rớt dòng trên màn hình nhỏ */
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* Khung bao ngoài (Card) */
+.card {
+    width: 800px;
+    background-color: white;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+}
+
+/* Hình ảnh tràn khung */
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Nội dung bên trong */
+.card-content {
     padding: 20px;
 }
 
-/* Cột bên trái và phải (Side) */
-.flex-container > div:nth-child(1),
-.flex-container > div:nth-child(3) {
-    flex: 20%; /* Chiếm 20% chiều rộng */
-    padding: 10px;
+.title {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
 }
 
-/* Cột chính ở giữa (Main Content) */
-.flex-container > div:nth-child(2) {
-    flex: 60%; /* Chiếm 60% chiều rộng */
-    padding: 10px;
+.subtitle {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-/* Responsive: Khi màn hình nhỏ hơn 700px, các cột sẽ xếp chồng lên nhau */
-@media (max-width: 700px) {
-    .flex-container {
-        flex-direction: column;
-    }
-    .flex-container > div {
-        flex: 100%;
-    }
+.date {
+    opacity: 0.6;
+}
+
+.description {
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Phần nút và comment */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.read-more {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    background-color: #ccc;
+}
+
+.comments {
+    font-weight: bold;
+}
+
+.comment-count {
+    background-color: black;
+    color: white;
+    padding: 2px 8px;
+    margin-left: 5px;
 }
